@@ -33,7 +33,7 @@ public class StartGameControllerTest {
 
 	@Test
 	public void sizeDeckTest() {
-		assertEquals(startGameController.sizeDesk(), 24);
+		assertEquals(startGameController.sizeDeck(), 24);
 	}
 
 	@Test

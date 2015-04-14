@@ -18,10 +18,10 @@ public class MoveCardControllerTest {
 
 	@Test
 	public void moveCardFromDeckToWasteTest() {
-		int sizeDeck = gameController.sizeDesk();
+		int sizeDeck = gameController.sizeDeck();
 		int sizeWaste = gameController.sizeWaste();
-		moveCardController.move();
-		assertEquals(gameController.sizeDesk(), (sizeDeck - 3));
+		moveCardController.moveFromDeckToWaste();
+		assertEquals(gameController.sizeDeck(), (sizeDeck - 3));
 		assertEquals(gameController.sizeWaste(), (sizeWaste + 3));
 	}
 

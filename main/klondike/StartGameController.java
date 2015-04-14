@@ -18,7 +18,7 @@ public class StartGameController {
 		return sizeFoundations;
 	}
 
-	public int sizeDesk() {
+	public int sizeDeck() {
 		// TODO Auto-generated method stub
 		return 24;
 	}
