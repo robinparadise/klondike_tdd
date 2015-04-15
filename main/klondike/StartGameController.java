@@ -61,4 +61,8 @@ public class StartGameController {
 		this.getFoundation(i).add(card);
 	}
 
+	public Card removeWaste() {
+		return this.waste.pop();
+	}
+
 }
