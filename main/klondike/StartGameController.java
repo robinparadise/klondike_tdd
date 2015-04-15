@@ -11,7 +11,14 @@ public class StartGameController {
 
 	private int deck = DECK;
 	private Stack<Card> waste = new Stack<Card>();
-	private ArrayList<Stack<Card>> foundations = new ArrayList<Stack<Card>>();
+	private ArrayList<Stack<Card>> foundations;
+	
+	public StartGameController() {
+		this.foundations = new ArrayList<Stack<Card>>(FOUNDATIONS);
+		for(int i = 0; i < FOUNDATIONS; i++){
+			foundations.add(new Stack<Card>());
+		}
+	}
 
 	public ArrayList<Integer> sizeFoundations() {
 		ArrayList<Integer> sizeFoundations = new ArrayList<Integer>();
