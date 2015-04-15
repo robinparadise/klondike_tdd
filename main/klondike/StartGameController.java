@@ -6,11 +6,8 @@ import java.util.Stack;
 public class StartGameController {
 
 	private int deck = 24;
-	private int waste = 0;
-
-	public int sizeWaste() {
-		return this.waste;
-	}
+	
+	private Stack<Card> waste = new Stack<Card>();
 
 	public ArrayList<Integer> sizeFoundations() {
 		ArrayList<Integer> sizeFoundations = new ArrayList<Integer>();
@@ -44,8 +41,22 @@ public class StartGameController {
 		this.deck = i;
 	}
 
-	public void addWaste() {
-		this.waste ++;
+	public void addWaste(Card card) {
+		this.waste.add(card);
+	}
+	
+	public int sizeWaste() {
+		return this.waste.size();
+	}
+
+	public void addFoundation() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Stack<Card> getFoundation() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
