@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 public class StartGameController {
-
-	private int deck = 24;
 	
+	public static final int FOUNDATIONS = 4;
+	public static final int TABLEAUS = 7;
+    public static final int DECK = 24;
+
+	private int deck = DECK;
 	private Stack<Card> waste = new Stack<Card>();
+	private ArrayList<Stack<Card>> foundations = new ArrayList<Stack<Card>>();
 
 	public ArrayList<Integer> sizeFoundations() {
 		ArrayList<Integer> sizeFoundations = new ArrayList<Integer>();
@@ -49,14 +53,12 @@ public class StartGameController {
 		return this.waste.size();
 	}
 
-	public void addFoundation() {
-		// TODO Auto-generated method stub
-		
+	public Stack<Card> getFoundation(int foundation){
+		return this.foundations.get(foundation);
 	}
 
-	public Stack<Card> getFoundation() {
-		// TODO Auto-generated method stub
-		return null;
+	public void addFoundation(int i, Card card) {
+		this.getFoundation(i).add(card);
 	}
 
 }
