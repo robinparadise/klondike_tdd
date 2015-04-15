@@ -2,6 +2,8 @@ package klondike;
 
 import static org.junit.Assert.*;
 
+import java.util.Stack;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,6 +34,18 @@ public class MoveCardControllerTest {
 		moveCardController.moveFromDeckToWaste();
 		assertEquals(gameController.sizeDeck(), 0);
 		assertEquals(gameController.sizeWaste(), sizeDeck);
+	}
+	
+	@Test
+	public void moveCardFromWasteToFoundationTest() {
+		gameController.addWaste(new Card());
+		gameController.addFoundation(1, new Card());
+		Stack<Card> foundation = gameController.getFoundation(1);
+		int foundationSize = foundation.size();
+		int sizeWaste = gameController.sizeWaste();
+		moveCardController.moveFromWasteToFoundation(1);
+		assertEquals(sizeWaste - 1, gameController.sizeWaste());
+		assertEquals(foundationSize + 1, gameController.getFoundation(1).size());
 	}
 
 }
