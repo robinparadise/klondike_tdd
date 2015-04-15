@@ -13,7 +13,7 @@ public class MoveCardControllerTest {
 	@Before
 	public void before() {
 		gameController = new StartGameController();
-		moveCardController = new MoveCardController();
+		moveCardController = new MoveCardController(gameController);
 	}
 
 	@Test
@@ -23,6 +23,15 @@ public class MoveCardControllerTest {
 		moveCardController.moveFromDeckToWaste();
 		assertEquals(gameController.sizeDeck(), (sizeDeck - 3));
 		assertEquals(gameController.sizeWaste(), (sizeWaste + 3));
+	}
+	
+	@Test
+	public void moveCardFromDeckToWasteLessThan3CardsTest() {
+		int sizeDeck = 2;
+		gameController.setDeck(sizeDeck);
+		moveCardController.moveFromDeckToWaste();
+		assertEquals(gameController.sizeDeck(), 0);
+		assertEquals(gameController.sizeWaste(), sizeDeck);
 	}
 
 }

@@ -5,9 +5,11 @@ import java.util.Stack;
 
 public class StartGameController {
 
+	private int deck = 24;
+	private int waste = 0;
+
 	public int sizeWaste() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.waste;
 	}
 
 	public ArrayList<Integer> sizeFoundations() {
@@ -20,7 +22,7 @@ public class StartGameController {
 
 	public int sizeDeck() {
 		// TODO Auto-generated method stub
-		return 24;
+		return this.deck;
 	}
 
 	public ArrayList<Integer> sizeTableaus() {
@@ -36,6 +38,14 @@ public class StartGameController {
 	public ArrayList<Stack<Card>> uncoveredCardsStackTableau() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void setDeck(int i) {
+		this.deck = i;
+	}
+
+	public void addWaste() {
+		this.waste ++;
 	}
 
 }
