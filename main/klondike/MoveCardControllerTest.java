@@ -47,5 +47,16 @@ public class MoveCardControllerTest {
 		assertEquals(sizeWaste - 1, gameController.sizeWaste());
 		assertEquals(foundationSize + 1, gameController.getFoundation(1).size());
 	}
+	
+	
+	@Test
+	public void moveCardFromWasteToTableauTest() {
+		gameController.addWaste(new Card());
+		gameController.addTableau(1, new Card());
+		boolean move = moveCardController.moveFromWasteToTableau(1);
+		assertTrue(move);
+		assertEquals(2, gameController.getTableau(1).size());
+		assertEquals(0, gameController.sizeWaste());
+	}
 
 }

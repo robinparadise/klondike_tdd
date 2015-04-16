@@ -2,6 +2,7 @@ package klondike;
 
 import java.util.ArrayList;
 import java.util.Stack;
+import java.util.Vector;
 
 public class StartGameController {
 	
@@ -70,6 +71,16 @@ public class StartGameController {
 
 	public Card removeWaste() {
 		return this.waste.pop();
+	}
+
+	public void addTableau(int i, Card card) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Vector<Card> getTableau(int i) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

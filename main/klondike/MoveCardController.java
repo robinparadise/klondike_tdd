@@ -34,4 +34,9 @@ public class MoveCardController {
 		return true;
 	}
 
+	public boolean moveFromWasteToTableau(int i) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
