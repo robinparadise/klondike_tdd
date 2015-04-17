@@ -13,11 +13,16 @@ public class StartGameController {
 	private int deck = DECK;
 	private Stack<Card> waste = new Stack<Card>();
 	private ArrayList<Stack<Card>> foundations;
+	private ArrayList<Stack<Card>> tableaus;
 	
 	public StartGameController() {
 		this.foundations = new ArrayList<Stack<Card>>(FOUNDATIONS);
 		for(int i = 0; i < FOUNDATIONS; i++){
 			foundations.add(new Stack<Card>());
+		}
+		this.tableaus = new ArrayList<Stack<Card>>(TABLEAUS);
+		for(int i = 0; i < TABLEAUS; i++){
+			tableaus.add(new Stack<Card>());
 		}
 	}
 
