@@ -2,26 +2,25 @@ package klondike;
 
 import java.util.ArrayList;
 import java.util.Stack;
-import java.util.Vector;
 
 public class StartGameController {
-	
+
 	public static final int FOUNDATIONS = 4;
 	public static final int TABLEAUS = 7;
-    public static final int DECK = 24;
+	public static final int DECK = 24;
 
 	private int deck = DECK;
 	private Stack<Card> waste = new Stack<Card>();
 	private ArrayList<Stack<Card>> foundations;
 	private ArrayList<Stack<Card>> tableaus;
-	
+
 	public StartGameController() {
 		this.foundations = new ArrayList<Stack<Card>>(FOUNDATIONS);
-		for(int i = 0; i < FOUNDATIONS; i++){
+		for (int i = 0; i < FOUNDATIONS; i++) {
 			foundations.add(new Stack<Card>());
 		}
 		this.tableaus = new ArrayList<Stack<Card>>(TABLEAUS);
-		for(int i = 0; i < TABLEAUS; i++){
+		for (int i = 0; i < TABLEAUS; i++) {
 			tableaus.add(new Stack<Card>());
 		}
 	}
@@ -61,12 +60,12 @@ public class StartGameController {
 	public void addWaste(Card card) {
 		this.waste.add(card);
 	}
-	
+
 	public int sizeWaste() {
 		return this.waste.size();
 	}
 
-	public Stack<Card> getFoundation(int foundation){
+	public Stack<Card> getFoundation(int foundation) {
 		return this.foundations.get(foundation);
 	}
 
@@ -78,14 +77,12 @@ public class StartGameController {
 		return this.waste.pop();
 	}
 
-	public void addTableau(int i, Card card) {
-		// TODO Auto-generated method stub
-		
+	public Stack<Card> getTableau(int i) {
+		return this.tableaus.get(i);
 	}
 
-	public Vector<Card> getTableau(int i) {
-		// TODO Auto-generated method stub
-		return null;
+	public void addTableau(int i, Card card) {
+		this.getTableau(i).add(card);
 	}
 
 }
