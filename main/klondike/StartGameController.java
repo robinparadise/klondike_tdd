@@ -44,13 +44,21 @@ public class StartGameController {
 	}
 
 	public ArrayList<Integer> sizeCoveredCardsTableaus() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Integer> sizeTableaus = new ArrayList<Integer>();
+		for (int i = 0; i < TABLEAUS; i++) {
+			sizeTableaus.add(i+1);
+		}
+		return sizeTableaus;
 	}
 
 	public ArrayList<Stack<Card>> uncoveredCardsStackTableau() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = new ArrayList<Stack<Card>>();
+		for (int i = 0; i < TABLEAUS; i++) {
+			Stack<Card> uncoveredCardsStack = new Stack<Card>();
+			uncoveredCardsStack.add(new Card());
+			uncoveredCardsStackTableaus.add(uncoveredCardsStack);
+		}
+		return uncoveredCardsStackTableaus;
 	}
 
 	public void setDeck(int i) {

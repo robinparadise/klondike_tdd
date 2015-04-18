@@ -35,8 +35,12 @@ public class MoveCardController {
 	}
 
 	public boolean moveFromWasteToTableau(int i) {
-		// TODO Auto-generated method stub
-		return false;
+		Stack<Card> tableau = gameController.getTableau(i);
+		if (tableau.size() > 0) {
+			Card wasteCard = gameController.removeWaste();
+			gameController.addTableau(i, wasteCard);
+		}
+		return true;
 	}
 
 }
